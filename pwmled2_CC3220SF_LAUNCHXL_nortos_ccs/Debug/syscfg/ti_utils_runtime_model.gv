@@ -1,0 +1,23 @@
+digraph Model
+{
+    graph[rankdir=LR]
+
+    // mod.$name=/ti/devices/DriverLib
+
+    // mod.$name=/ti/drivers/Board
+    ti_drivers_Board -> ti_devices_DriverLib
+
+    // mod.$name=/ti/drivers/PWM
+    CONFIG_PWM_0 -> ti_drivers_Power
+    CONFIG_PWM_0 -> ti_drivers_Board
+    CONFIG_PWM_1 -> ti_drivers_Power
+    CONFIG_PWM_1 -> ti_drivers_Board
+
+    // mod.$name=/ti/drivers/Power
+    ti_drivers_Power -> ti_drivers_Board
+    ti_drivers_Power -> ti_drivers_power_PowerCC32XXPins0
+
+    // mod.$name=/ti/drivers/RTOS
+
+    // mod.$name=/ti/drivers/power/PowerCC32XXPins
+}
